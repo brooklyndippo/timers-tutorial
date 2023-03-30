@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { toggleTimer } from "../features/timers/timersSlice"; 
+import './TimerView.css'
 
 export default function TimerView({index, name, time, isRunning}) {
 	const dispatch = useDispatch()
@@ -22,7 +23,7 @@ export default function TimerView({index, name, time, isRunning}) {
     }
       
     return (
-        <div>
+        <div className='TimerView'>
             <h2>{name}</h2>
             <h1>{formatTime(time)}</h1>
             <button 
