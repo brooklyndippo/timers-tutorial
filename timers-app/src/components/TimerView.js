@@ -27,6 +27,7 @@ export default function TimerView({index, name, time, isRunning}) {
             <h2>{name}</h2>
             <h1>{formatTime(time)}</h1>
             <button 
+              style = {{backgroundColor: isRunning? "red" : "#00a300"}}
               onClick={() => dispatch(toggleTimer(index))}
             >
                 {isRunning? "Stop" : "Start"}
