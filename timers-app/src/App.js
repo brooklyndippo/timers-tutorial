@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import NewTimer from './components/NewTimer';
 import ListTimers from './components/ListTimers';
+import './index.css';
 
 function App() {
   return (

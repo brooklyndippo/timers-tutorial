@@ -18,7 +18,7 @@ export default function NewTimer() {
 				value={name}
 				onChange={(e) => setName(e.target.value)} />
 			
-			<button
+			<button className="bg-purple-800 text-4xl"
 				onClick={() => dispatch(addTimer(name))}
 			>Save</button>
 
