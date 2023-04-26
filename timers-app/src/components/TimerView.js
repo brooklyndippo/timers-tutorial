@@ -23,20 +23,24 @@ export default function TimerView({index, name, time, isRunning}) {
     }
       
     return (
-        <div className='TimerView'>
-            <h2>{name}</h2>
-            <h1>{formatTime(time)}</h1>
-            <div className='ButtonGroup'>
+        <div className='w-full bg-white border-gray-500 p-4 rounded-md shadow flex'>
+            <div className="flex-grow flex flex-col">
+                <div className="flex flex-row gap-4">
+                    <p className="font-semibold text-gray-500">{name}</p>
+                    <button 
+                    onClick={() => dispatch(reset(index))}
+                    >↻</button>  
+                </div>
+                <p className="text-3xl font-mono">{formatTime(time)}</p>
+            </div>
+            <div className='flex flex-col'>
                 <button 
-                style = {{backgroundColor: isRunning? "red" : "#00a300"}}
+                className="h-full p-2 rounded-md min-w-[100px] font-semibold"
+                style = {{backgroundColor: isRunning ? "rgb(107 33 168)" : "rgb(216 180 254)", color: isRunning ? "white": "rgb(59 7 100)"}}
                 onClick={() => dispatch(toggleTimer(index))}
                 >
-                    {isRunning? "Stop" : "Start"}
+                    {isRunning? "Pause" : "Start"}
                 </button>
-                <button 
-                className="reset"
-                onClick={() => dispatch(reset(index))}
-                >Reset</button>  
             </div>
         </div>
     )

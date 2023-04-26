@@ -7,7 +7,7 @@ export default function ListTimers() {
     const timers = useSelector(state => state.timers.value)
 
     return (
-		<div className="bg-pink-300">
+		<div className="flex flex-col gap-4">
 			{timers.map((timer, i) => <TimerView key={`timer-${i}`} index={i} {...timer} />)}
 		</div>
 	)
